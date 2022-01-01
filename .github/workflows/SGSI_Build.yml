@@ -15,10 +15,6 @@ on:
         description: 'OS_TYPE'
         required: true
         default: 'flyme'
-      SGSI_TYPE:
-        description: 'SGSI_TYPE(AB, A, or BOTH)'
-        required: true
-        default: 'AB'
       REPACK_NAME:
         description: 'REPACK_NAME'
         required: true
@@ -74,7 +70,6 @@ jobs:
           java -version
 
       - name: Make AB type GSI‌‌...
-        if: ${{ github.event.inputs.SGSI_TYPE }} == 'AB' || ${{ github.event.inputs.SGSI_TYPE }} == 'BOTH'
         run: |
           sudo bash $GITHUB_WORKSPACE/Tool-SGSI-build/make.sh AB << EOF
           ${{ github.event.inputs.ZIP_NAME }}
@@ -84,7 +79,6 @@ jobs:
           y
 
       - name: Packing(AB)...
-        if: ${{ github.event.inputs.SGSI_TYPE }} == 'AB' || ${{ github.event.inputs.SGSI_TYPE }} == 'BOTH'
         run: |
           cd $GITHUB_WORKSPACE/Tool-SGSI-build
           pwd
