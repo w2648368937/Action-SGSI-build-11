@@ -1,10 +1,7 @@
-# Action-SGSI-build
-
-> 适配Android R
->
+# Action-SGSI-build-11 -LZY修改
 > 修复制作超过2G的SGSI无法上传Release的问题
 >
-> 支持自定义精简功能
+> 修改为只跑AB
 >
 > 已修复之前不能跑包的问题
 
