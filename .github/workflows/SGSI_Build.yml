@@ -11,10 +11,6 @@ on:
         description: 'ZIP_NAME'
         required: true
         default: 'update.zip'
-      OS_TYPE:
-        description: 'OS_TYPE'
-        required: true
-        default: 'flyme'
       REPACK_NAME:
         description: 'REPACK_NAME'
         required: true
