@@ -74,8 +74,8 @@ jobs:
            mkdir 999
            pwd
            
-           cp ../tmp/vendor.img  999
-           cp ../tmp/odm.img  999
+           cp tmp/vendor.img  999
+           cp tmp/odm.img  999
           zip -r AB_${{ github.event.inputs.REPACK_NAME }} 999/*
           ls "AB_${{ github.event.inputs.REPACK_NAME }}"
           echo "--------------------------------------"
