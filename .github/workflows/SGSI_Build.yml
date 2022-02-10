@@ -70,9 +70,9 @@ jobs:
           y
       - name: Packing(AB)...
         run: |
-          cd $GITHUB_WORKSPACE/Tool-SGSI-build
+          cd $GITHUB_WORKSPACE/Tool-SGSI-build/SGSI
           pwd
-          zip -r AB_${{ github.event.inputs.REPACK_NAME }} SGSI/*
+          zip -r AB_${{ github.event.inputs.REPACK_NAME }} *
           ls "AB_${{ github.event.inputs.REPACK_NAME }}"
           echo "--------------------------------------"
           ls
