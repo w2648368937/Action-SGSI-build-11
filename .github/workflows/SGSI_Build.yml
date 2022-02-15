@@ -71,6 +71,7 @@ jobs:
       - name: Packing(AB)...
         run: |
           cd $GITHUB_WORKSPACE/Tool-SGSI-build/SGSI
+          resize2fs -f system.img 888394
           pwd
           zip -r AB_${{ github.event.inputs.REPACK_NAME }} *
           ls "AB_${{ github.event.inputs.REPACK_NAME }}"
