@@ -18,7 +18,7 @@ on:
       REPACK_NAME:
         description: 'REPACK_NAME'
         required: true
-        default: '22.2.14I.zip'
+        default: '22.2.14.zip'
 
 
 
@@ -71,6 +71,13 @@ jobs:
       - name: Packing(AB)...
         run: |
           cd $GITHUB_WORKSPACE/Tool-SGSI-build/SGSI
+          
+          mkdir -p /mnt/new
+          mount -o loop system.img /mnt/new
+          cp ../fix/begonia.xml /mnt/nwe/system/etc/device_features/
+          chmod -R 644 /mnt/nwe/system/etc/device_features/*
+          umount  /mnt/new
+          
           resize2fs -f system.img 888394
           pwd
           zip -r AB_${{ github.event.inputs.REPACK_NAME }} *
