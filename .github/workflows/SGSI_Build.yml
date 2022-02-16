@@ -72,11 +72,11 @@ jobs:
         run: |
           cd $GITHUB_WORKSPACE/Tool-SGSI-build/SGSI
           
-          mkdir -p /mnt/new
-          mount -o loop system.img /mnt/new
-          cp ../fix/begonia.xml /mnt/nwe/system/etc/device_features/
-          chmod -R 644 /mnt/nwe/system/etc/device_features/*
-          umount  /mnt/new
+          mkdir -p ../new
+          mount -o loop system.img ../new
+          cp ../fix/begonia.xml ../nwe/system/etc/device_features/
+          chmod -R 644 ../nwe/system/etc/device_features/*
+          umount  ../new
           
           resize2fs -f system.img 888394
           pwd
