@@ -72,12 +72,6 @@ jobs:
         run: |
           cd $GITHUB_WORKSPACE/Tool-SGSI-build/SGSI
           
-          mkdir -p ../new
-          mount -o loop system.img ../new
-          cp ../fix/begonia.xml ../nwe/system/etc/device_features/
-          chmod -R 644 ../nwe/system/etc/device_features/*
-          umount  ../new
-          
           resize2fs -f system.img 888394
           pwd
           zip -r AB_${{ github.event.inputs.REPACK_NAME }} *
